@@ -1,0 +1,26 @@
+<audio
+    #player
+    src="http://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3">
+</audio>
+
+<ion-toolbar color="primary" padding>
+    <div class="ion-text-center">
+        <ion-button (click)="play()" size="large" fill="clear" color="light">
+            <ng-container *ngIf="isLoading; else loaded">Loading</ng-container>
+
+            <ng-template #loaded>
+                {{ isPlaying ? 'pause' : 'play' }}
+            </ng-template>
+        </ion-button>
+    </div>
+
+    <ion-range
+        min="0"
+        [max]="duration"
+        [value]="currentTime"
+        (ionChange)="seek($event)"
+        color="light">
+        <ion-label color="light" slot="start">{{ currentTimeText }}</ion-label>
+        <ion-label color="light" slot="end">{{ durationText }}</ion-label>
+    </ion-range>
+</ion-toolbar>
