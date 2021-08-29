@@ -5,22 +5,31 @@
 
 <ion-toolbar>
 <div class="audioplayer">
-    <ion-title>Audio Wiedergabe</ion-title>
+    <ion-text class="ion-text-center" color="primary">
+        <h6>Audio-Wiedergabe</h6>
+      </ion-text>
 
     <ion-range
         min="0"
         [max]="duration"
         [value]="currentTime" 
         (ionChange)="seek($event)"
+        class="custom-aduio"
         >
-        <ion-label color="light" slot="start">{{ currentTimeText }}</ion-label>
-        <ion-label color="light" slot="end">{{ durationText }}</ion-label>
+        <ion-label color="primary" slot="start">{{ currentTimeText }}</ion-label>
+        <ion-label color="primary" slot="end">{{ durationText }}</ion-label>
     </ion-range>
 
     <div class="options">
-        <div> <ion-icon name="play" size="large"></ion-icon></div>
-        <div> <ion-icon name="pause" size="large"></ion-icon></div>
-        <div class="disabled"> <ion-icon name="stop" size="large"></ion-icon></div>
+        <ion-fab-button color="primary">
+            <ion-icon name="play" size="large"></ion-icon>
+        </ion-fab-button>
+        <ion-fab-button color="primary">
+            <ion-icon name="pause" size="large"></ion-icon>
+        </ion-fab-button>
+        <ion-fab-button color="primary" this.buttonDisabled="false">
+            <ion-icon name="stop" size="large"></ion-icon>
+        </ion-fab-button>
     </div>
 
     <div class="ion-text-center">

@@ -26,38 +26,35 @@
 @import "~@ionic/angular/css/flex-utils.css";
 
 .audioplayer{
-    background-color: rgb(255, 255, 255);
     margin: 20px;
     padding: 10px;
     border-radius: 10px 30px 10px 10px;
-
-    .toolbar-title{
-        color: black;
-    }
-
+    background: rgb(255, 255, 255);
+    box-shadow: 0px 0px 13px 0px rgb(16, 103, 159, 0.27) ;
+  
     .options{
         display: flex;
         justify-content: center;
-
-        div{
-            background-color: #1B0F71;
-            border-radius: 50%;
-            height: 55px;
-            width: 55px;
-            padding: 12px;
-            margin: 0 10px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            &.disabled{
-                opacity: 0.6;
-            }
+        
+        ion-fab-button{
+            margin:10px  5px;
         }
     }
 
-    .range-bar{
-        background: red !important;
-        height: 4px;
+    .ion-color.sc-ion-label-ios-h{
+        color: #1778B7;
     }
-}
+
+    .custom-aduio{
+        --bar-background: #C8E7FC;
+        --bar-background-active:#34A121;
+        --bar-border-radius:5px;
+        --bar-height:6px;
+        --knob-background:#34A121;
+        --knob-size:22px;
+    }
+    
+        
+    
+ 
+} 
